@@ -1,60 +1,67 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <Header/>
+    <Main/>
   </div>
 </template>
 
 <script>
+import Main from "./components/Main.vue";
+import Header from "./components/Header.vue";
+
 export default {
   name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components: {
+    Main,
+    Header
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root{
+    --main-color: #eee;
+    --primary-color: #333;
 }
 
-h1, h2 {
-  font-weight: normal;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
-
-ul {
-  list-style-type: none;
+body,
+html {
+  margin: 0;
   padding: 0;
+  min-height: 100%;
+  display: flex;
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+body::-webkit-scrollbar-thumb {
+  outline: 1px solid #fff;
+  background-color: #fff;
 }
 
-a {
-  color: #42b983;
+mark {
+  color: #232121;
+  padding: 0 5px;
+  background-color: #ccb82d;
+  border-radius: 2px;
+  box-shadow: 2px 3px 1px #00000045;
+}
+
+#app {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  background-color: var(--main-color);
+  transition: all 0.5s ease-in-out;
+  font-family: Inter, system-ui, -apple-system, "Roboto Regular", "Segoe UI";
 }
 </style>
