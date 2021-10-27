@@ -34,10 +34,10 @@ export default {
     color: var(--primary-color);
     border-radius: 14px 0;
     display: flex;
-    margin: 4px 2px;
+    margin: 10px 8px;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+    box-shadow: 10px 11px 20px 0px rgb(0 0 0 / 20%);
 }
 
 .post-header, .post-body {

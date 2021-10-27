@@ -12,7 +12,7 @@ export default {
 </script>
 <style>
 header{
-    background-color: #328bc5a6;
+    background-color: #34a9f5a6;
     color: white;
     padding: 3px 4px;
     text-align: center;

@@ -1,73 +1,28 @@
 <template>
     <div class="main">
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
-        <PostSection 
-            :author="postData.author"
-            :createdAt="postData.createdAt"
-            :content="postData.content"
-        />
+        <NavLinks/>
+        <div class="content">
+            <Posts v-if="section == 1"/>
+            <FollowerPanel v-if="section == 2" />
+        </div>
     </div>
 </template>
 <script>
-import PostSection from './PostSection';
+import Posts from './Posts';
+import FollowerPanel from './FollowerPanel';
+import NavLinks from './NavLinks';
 
 export default {
     name: "Main",
     components: {
-        PostSection
+        Posts,
+        NavLinks,
+        FollowerPanel
     },
     data() {
         return {
-            postData: {}
+            postData: {},
+            section: 1
         }
     },
     created() {
@@ -82,14 +37,18 @@ export default {
 <style>
 .main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    width: calc(100vw - 10px);
     padding: 1em;
+    align-items: center;
 }
 
 @media (min-width: 600px){
-    .main{
-        /*max-width: 50vw;*/
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 60%;
     }
 }
 </style>
