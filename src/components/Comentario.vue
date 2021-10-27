@@ -1,11 +1,10 @@
 <template>
     <div>
         <form>
-            <div class="comment-content"
-                <textfield>
-                </textfield>
+            <div class="comment-content">
+                <textfield></textfield>
             </div>
-            </div class="comment-bottons">
+            <div class="comment-bottons">
                 <button type="submit">Enviar</button>
             </div>
         </form>
